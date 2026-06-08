@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>For My Crush ❤️</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{overflow:hidden;font-family:'Segoe UI',sans-serif;background:#000;color:#fff}
+.page{
+position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+padding:40px;text-align:center;opacity:0;transition:1.2s ease;
+background-size:cover;background-position:center;
+}
+.active{opacity:1;z-index:2}
+.card{
+max-width:900px;
+padding:50px;
+background:rgba(255,255,255,.12);
+backdrop-filter:blur(20px);
+border-radius:35px;
+box-shadow:0 0 50px rgba(255,255,255,.25);
+}
+h1{font-size:3.5rem;margin-bottom:20px}
+p{font-size:1.5rem;line-height:1.8}
+.page1{background:linear-gradient(135deg,#ff6a88,#ff99ac,#ffd1dc)}
+.page2{background:linear-gradient(135deg,#ff9a9e,#fecfef)}
+.page3{background:linear-gradient(135deg,#a18cd1,#fbc2eb)}
+.page4{background:linear-gradient(135deg,#f6d365,#fda085)}
+.page5{background:linear-gradient(135deg,#84fab0,#8fd3f4)}
+.page6{background:linear-gradient(135deg,#667eea,#764ba2)}
+.page7{background:linear-gradient(135deg,#ff758c,#ff7eb3)}
+.nav{position:fixed;bottom:20px;width:100%;text-align:center;z-index:10}
+button{
+padding:14px 28px;border:none;border-radius:40px;font-size:16px;
+cursor:pointer;margin:0 10px;
+}
+.heart{
+position:absolute;
+animation:float linear infinite;
+opacity:.75;
+}
+@keyframes float{
+from{transform:translateY(105vh)}
+to{transform:translateY(-120px)}
+}
+.glow{animation:pulse 2.5s infinite}
+@keyframes pulse{
+50%{text-shadow:0 0 25px rgba(255,255,255,.9)}
+}
+</style>
+</head>
+<body>
+
+<div class="page page1 active"><div class="card"><h1 class="glow">🌹 For Someone Special 🌹</h1><p>Happy Friendship Day to the girl who makes ordinary moments feel a little more magical.</p></div></div>
+
+<div class="page page2"><div class="card"><h1>✨ Your Smile ✨</h1><p>Your smile has a way of making everything brighter. It is one of those little things that can completely change a day.</p></div></div>
+
+<div class="page page3"><div class="card"><h1>💖 What Makes You Special</h1><p>Your kindness, your personality, your positivity, and the way you care about people make you truly unforgettable.</p></div></div>
+
+<div class="page page4"><div class="card"><h1>🌸 A Beautiful Friendship</h1><p>Some people enter our lives and leave a lasting impression. Knowing you has been one of those experiences.</p></div></div>
+
+<div class="page page5"><div class="card"><h1>⭐ My Wish For You</h1><p>May every dream you have find its way into reality, and may happiness always stay close to your heart.</p></div></div>
+
+<div class="page page6"><div class="card"><h1>💌 A Little Secret</h1><p>Among all the people I know, you are someone I admire deeply and think about more often than you probably realize.</p></div></div>
+
+<div class="page page7"><div class="card"><h1>❤️ Happy Friendship Day ❤️</h1><p>Thank you for being wonderful. No matter what happens in the future, I will always treasure the memories and smiles you've given me.</p><br><h2>With Warm Wishes 🌹</h2></div></div>
+
+<div class="nav">
+<button onclick="move(-1)">◀ Previous</button>
+<button onclick="move(1)">Next ▶</button>
+</div>
+
+<script>
+const pages=document.querySelectorAll('.page');
+let current=0;
+function show(i){pages.forEach(p=>p.classList.remove('active'));pages[i].classList.add('active');}
+function move(n){current=(current+n+pages.length)%pages.length;show(current);}
+
+for(let i=0;i<70;i++){
+ let h=document.createElement('div');
+ h.className='heart';
+ h.innerHTML=Math.random()>0.5?'💖':'🌸';
+ h.style.left=Math.random()*100+'vw';
+ h.style.fontSize=(15+Math.random()*30)+'px';
+ h.style.animationDuration=(8+Math.random()*10)+'s';
+ document.body.appendChild(h);
+}
+</script>
+</body>
+</html>
